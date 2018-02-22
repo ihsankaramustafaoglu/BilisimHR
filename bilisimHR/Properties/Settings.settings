@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="bilisimHR.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AuthAPI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:60100</Value>
+    </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bilisimHR.WebApp</Value>
+    </Setting>
+    <Setting Name="TokenPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Auth/Token</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

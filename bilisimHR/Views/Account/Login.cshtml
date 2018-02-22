@@ -1,0 +1,113 @@
+﻿@using bilisimHR.Business.Model.Auth;
+
+@model LoginViewModel
+@{
+    Layout = null;
+    ViewBag.Title = "BilişimHR";
+}
+
+<html lang="tr">
+<!-- HEAD -->
+<head>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css/login")
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="@ViewBag.Title" name="description" />
+    <meta content="" name="author" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+
+<body class="login">
+    <div class="logo">
+        <a href="">
+            <img src="../assets/pages/img/logo-big.png" alt="" />
+        </a>
+    </div>
+    <div class="content">
+        <!-- BEGIN LOGIN FORM -->
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+            <h3 class="form-title">Hesabınızla giriş yapın</h3>
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span> Kullanıcı adı ve şifre girilmelidir. </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Kullanıcı Adı</label>
+                <div class="input-icon">
+                    @Html.LabelFor(m => m.UserName, new { @class = "control-label visible-ie8 visible-ie9" })
+                    <i class="fa fa-user"></i>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control placeholder-no-fix", @placeholder = "Kullanıcı Adı", @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Şifre</label>
+                <div class="input-icon">
+                    @Html.LabelFor(m => m.Password, new { @class = "control-label visible-ie8 visible-ie9" })
+                    <i class="fa fa-lock"></i>
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control placeholder-no-fix", @placeholder = "Şifre", @type = "password", @autocomplete = "off" })
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn green pull-right"> Giriş </button>
+            </div>
+            <div class="forget-password">
+                <h4>Şifrenizi mi unuttunuz?</h4>
+                <p>
+                    <a href="javascript:;" id="forget-password"> Burayı </a> tıklayarak şifrenizi sıfırlayabilirsiniz.
+                </p>
+            </div>
+        }
+        <!-- END LOGIN FORM -->
+        <!-- BEGIN FORGOT PASSWORD FORM -->
+        <form class="forget-form" action="index.html" method="post">
+            <h3>Şifrenizi mi unuttunuz?</h3>
+            <p> Aşağıya e-mail adresinizi yazarak şifrenizi sıfırlayabilirsiniz. </p>
+            <div class="form-group">
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="ad.soyad@eposta.com" name="email" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn red btn-outline"> Geri </button>
+                <button type="submit" class="btn green pull-right"> Gönder </button>
+            </div>
+        </form>
+        <!-- END FORGOT PASSWORD FORM -->
+    </div>
+    <!-- END LOGIN -->
+    
+    <!-- BEGIN COPYRIGHT -->
+    <div class="copyright"> 2017 &copy; bilişimHR. Bilişim A.Ş.</div>
+    <!-- END COPYRIGHT -->
+    
+    <!--[if lt IE 9]>
+    <script src="../assets/global/plugins/respond.min.js"></script>
+    <script src="../assets/global/plugins/excanvas.min.js"></script>
+    <script src="../assets/global/plugins/ie8.fix.min.js"></script>
+    <![endif]-->
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/global/plugins")
+    @Scripts.Render("~/bundles/global/master")
+    @Scripts.Render("~/bundles/global/pages/login")
+    @*<script>
+        $(document).ready(function () {
+            $('#clickmewow').click(function () {
+                $('#radio1003').attr('checked', 'checked');
+            });
+        })
+    </script>*@
+</body>
+</html>
+

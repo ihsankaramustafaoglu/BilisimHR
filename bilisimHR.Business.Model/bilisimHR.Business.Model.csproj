@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A148050E-2E96-4753-AAA7-A4EE247E8E55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bilisimHR.Business.Model</RootNamespace>
+    <AssemblyName>bilisimHR.Business.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth\ClientsModel.cs" />
+    <Compile Include="Auth\ControllerActionsModel.cs" />
+    <Compile Include="Auth\PagesModel.cs" />
+    <Compile Include="Auth\RefreshTokenModel.cs" />
+    <Compile Include="Auth\RoleInPagesModel.cs" />
+    <Compile Include="Auth\RolesModel.cs" />
+    <Compile Include="Auth\SmtpModel.cs" />
+    <Compile Include="Auth\Token.cs" />
+    <Compile Include="Auth\UsersModel.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Email\EmailModel.cs" />
+    <Compile Include="Employees\EmpAdressModel.cs" />
+    <Compile Include="Employees\EmpEducationModel.cs" />
+    <Compile Include="Employees\EmpEmployeeModel.cs" />
+    <Compile Include="Employees\EmpEmployeePkModel.cs" />
+    <Compile Include="Employees\EmpIdentityModel.cs" />
+    <Compile Include="Employees\EmpLanguageModel.cs" />
+    <Compile Include="Employees\EmpLeaveDetailModel.cs" />
+    <Compile Include="Employees\EmpPhoneModel.cs" />
+    <Compile Include="Employees\EmpPositionDetailModel.cs" />
+    <Compile Include="Organization\OrgDepartmentDetailModel.cs" />
+    <Compile Include="Organization\OrgDepartmentDetailSegmentModel.cs" />
+    <Compile Include="Organization\OrgDepartmentModel.cs" />
+    <Compile Include="Organization\OrgDepartmentPkModel.cs" />
+    <Compile Include="Parameters\CodeTableModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bilisimHR.Common.Helper\bilisimHR.Common.Helper.csproj">
+      <Project>{50C55C40-DFB8-4448-9476-7126DF8A3265}</Project>
+      <Name>bilisimHR.Common.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

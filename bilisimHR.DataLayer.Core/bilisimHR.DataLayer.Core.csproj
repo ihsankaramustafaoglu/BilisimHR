@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCE38DFC-AEEA-494B-A51B-9E5A705E5FD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bilisimHR.DataLayer.Core</RootNamespace>
+    <AssemblyName>bilisimHR.DataLayer.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.3.4\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Auth\Clients.cs" />
+    <Compile Include="Entities\Auth\ControllerActions.cs" />
+    <Compile Include="Entities\Auth\Pages.cs" />
+    <Compile Include="Entities\Auth\RefreshToken.cs" />
+    <Compile Include="Entities\Auth\RoleInPages.cs" />
+    <Compile Include="Entities\Auth\Roles.cs" />
+    <Compile Include="Entities\Auth\Smtp.cs" />
+    <Compile Include="Entities\Auth\Users.cs" />
+    <Compile Include="Entities\Employees\EmpAdress.cs" />
+    <Compile Include="Entities\Employees\EmpEducation.cs" />
+    <Compile Include="Entities\Employees\EmpEmployee.cs" />
+    <Compile Include="Entities\Employees\EmpEmployeePk.cs" />
+    <Compile Include="Entities\Employees\EmpIdentity.cs" />
+    <Compile Include="Entities\Employees\EmpLanguage.cs" />
+    <Compile Include="Entities\Employees\EmpLeaveDetail.cs" />
+    <Compile Include="Entities\Employees\EmpPhone.cs" />
+    <Compile Include="Entities\Employees\EmpPositionDetail.cs" />
+    <Compile Include="Entities\Organization\OrgDepartment.cs" />
+    <Compile Include="Entities\Organization\OrgDepartmentDetail.cs" />
+    <Compile Include="Entities\Organization\OrgDepartmentDetailSegment.cs" />
+    <Compile Include="Entities\Organization\OrgDepartmentPk.cs" />
+    <Compile Include="Entities\Parameters\Codes.cs" />
+    <Compile Include="Entities\Parameters\CodesTable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Auth\IClientsRepository.cs" />
+    <Compile Include="Repositories\Auth\IControllerActionsRepository.cs" />
+    <Compile Include="Repositories\Auth\IPagesRepository.cs" />
+    <Compile Include="Repositories\Auth\IRefreshTokenRepository.cs" />
+    <Compile Include="Repositories\Auth\IRoleInPagesRepository.cs" />
+    <Compile Include="Repositories\Auth\IRolesRepository.cs" />
+    <Compile Include="Repositories\Auth\ISmtpRepository.cs" />
+    <Compile Include="Repositories\Auth\IUsersRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpAdressRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpEducationRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpEmployeePkRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpEmployeeRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpIdentityRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpLanguageRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpLeaveDetailRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpPhoneRepository.cs" />
+    <Compile Include="Repositories\Employees\IEmpPositionDetailRepository.cs" />
+    <Compile Include="Repositories\Organization\IOrgDepartmentDetailRepository.cs" />
+    <Compile Include="Repositories\Organization\IOrgDepartmentDetailSegmentRepository.cs" />
+    <Compile Include="Repositories\Organization\IOrgDepartmentPkRepository.cs" />
+    <Compile Include="Repositories\Organization\IOrgDepartmentRepository.cs" />
+    <Compile Include="Repositories\Parameters\ICodesTableRepository.cs" />
+    <Compile Include="Validation\CoreStructure\CodesTableValidator.cs" />
+    <Compile Include="Validation\CoreStructure\CodesValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bilisimHR.Business.Model\bilisimHR.Business.Model.csproj">
+      <Project>{A148050E-2E96-4753-AAA7-A4EE247E8E55}</Project>
+      <Name>bilisimHR.Business.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bilisimHR.Common.Core\bilisimHR.Common.Core.csproj">
+      <Project>{243a330a-aeec-4075-8796-2e0e86c86c92}</Project>
+      <Name>bilisimHR.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bilisimHR.Common.Helper\bilisimHR.Common.Helper.csproj">
+      <Project>{50C55C40-DFB8-4448-9476-7126DF8A3265}</Project>
+      <Name>bilisimHR.Common.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
